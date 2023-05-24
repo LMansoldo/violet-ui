@@ -1,0 +1,121 @@
+@import './src/lib/styles/index.scss';
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+@layer components {
+    .btn {
+        @apply inline-flex justify-center items-center leading-none px-2 py-1.5 rounded hover:bg-opacity-20 transition duration-300 uppercase border-2;
+        line-height: 1rem;
+        min-height: 2.5rem;
+    
+        &.disab
+        &:disabled {
+            @apply opacity-40 cursor-not-allowed;
+        }
+    
+        &.primary {
+            @apply text-white bg-primary-500 hover:bg-primary-600 hover:bg-opacity-70;
+        }
+    
+        &.secondary {
+            @apply text-secondary-500 hover:bg-secondary-500 hover:bg-opacity-70;
+        }
+    
+        &.additional {
+            @apply text-additional-600 bg-slate-100 hover:bg-additional-600 hover:bg-opacity-70;
+        }
+    
+        &.faded {
+            @apply text-primary-500 bg-slate-100 hover:bg-slate-100 hover:bg-opacity-70;
+        }
+    
+        &.danger {
+            @apply text-additional-600 bg-danger-500 hover:bg-primary-100;
+        }
+    
+        &.raised {
+            @apply px-4;
+            box-shadow: 0px 3px 1px -2px rgb(0 0 0 / 20%),
+                0px 2px 2px 0px rgb(0 0 0 / 14%), 0px 1px 5px 0px rgb(0 0 0 / 12%);
+            &:hover {
+                box-shadow: 0px 2px 4px -1px rgb(0 0 0 / 20%),
+                    0px 4px 5px 0px rgb(0 0 0 / 14%), 0px 1px 10px 0px rgb(0 0 0 / 12%);
+            }
+            &.primary {
+                @apply bg-primary-500 text-white;
+            }
+            &.secondary {
+                @apply bg-secondary-500 text-additional-600;
+            }
+            &.additional {
+                @apply bg-additional-500 text-additional-600;
+            }
+            &.danger {
+                @apply bg-danger-500 text-primary-100;
+            }
+        }
+    
+        &.outlined {
+            @apply border-solid border px-4;
+    
+            &.primary,
+            &.secondary,
+            &.additional,
+            &.danger {
+                @apply bg-transparent;
+            }
+    
+            &.primary {
+                @apply border-primary-500 text-primary-500 hover:bg-primary-100;
+            }
+    
+            &.secondary {
+                @apply border-secondary-500 text-secondary-500 hover:bg-secondary-100;
+            }
+    
+            &.additional {
+                @apply border-additional-700 text-additional-700 hover:bg-additional-100;
+            }
+    
+            &.danger {
+                @apply border-danger-500 text-danger-500 hover:bg-danger-100;
+            }
+        }
+    
+        &.text {
+            @apply border-none px-4;
+
+    
+            &.primary {
+                @apply text-white hover:bg-primary-400;
+            }
+    
+            &.secondary {
+                @apply text-secondary-500 hover:bg-secondary-100;
+            }
+    
+            &.additional {
+                @apply text-additional-700 hover:bg-additional-100;
+            }
+    
+            &.danger {
+                @apply text-danger-500 hover:bg-error-100;
+            }
+        }
+    
+        &.chip {
+            @apply rounded-full font-medium;
+            padding: 0.8125rem 1.375rem;
+            font-size: 1rem;
+            line-height: 1em;
+        }
+    
+        &.thin {
+            @apply max-h-8 text-xs;
+            min-height: auto;
+        }
+    }
+}

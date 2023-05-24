@@ -1,0 +1,140 @@
+@use './utils' as *;
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+@layer components {
+	.btn {
+		@apply inline-flex justify-center items-center leading-none px-2 py-1.5 rounded hover:bg-opacity-80 transition duration-300 uppercase;
+		line-height: 1rem;
+		min-height: 2.5rem;
+
+		&.disabled,
+		&:disabled {
+			@apply opacity-40 cursor-not-allowed;
+		}
+
+		&.primary {
+			@apply text-white hover:bg-primary-500 hover:bg-opacity-80;
+		}
+
+		&.secondary {
+			@apply text-secondary-500 hover:bg-secondary-500 hover:bg-opacity-20;
+		}
+
+		&.additional {
+			@apply text-additional-600 bg-surface hover:bg-additional-600 hover:bg-opacity-20;
+		}
+
+		&.faded {
+			@apply text-primary-500 bg-faded hover:bg-on-faded hover:bg-opacity-20;
+		}
+
+		&.danger {
+			@apply text-surface bg-danger-500 hover:bg-on-danger;
+		}
+
+		&.raised {
+			@apply px-4;
+			box-shadow: 0px 3px 1px -2px rgb(0 0 0 / 20%),
+				0px 2px 2px 0px rgb(0 0 0 / 14%), 0px 1px 5px 0px rgb(0 0 0 / 12%);
+			&:hover {
+				box-shadow: 0px 2px 4px -1px rgb(0 0 0 / 20%),
+					0px 4px 5px 0px rgb(0 0 0 / 14%), 0px 1px 10px 0px rgb(0 0 0 / 12%);
+			}
+			&.primary {
+				@apply bg-primary-500 text-on-primary;
+			}
+			&.secondary {
+				@apply bg-secondary-500 text-on-surface;
+			}
+			&.additional {
+				@apply bg-additional-500 text-on-surface;
+			}
+			&.danger {
+				@apply bg-danger-500 text-on-primary;
+			}
+		}
+
+		&.outlined {
+			@apply border-solid border px-4;
+
+			&.primary,
+			&.secondary,
+			&.additional,
+			&.danger {
+				@apply bg-transparent;
+			}
+
+			&.primary {
+				@apply border-primary-500 text-primary-500 hover:bg-primary-400;
+			}
+
+			&.secondary {
+				@apply border-secondary-500 text-secondary-500 hover:bg-secondary-300;
+			}
+
+			&.additional {
+				@apply border-additional-700 text-additional-700 hover:bg-additional-300;
+			}
+
+			&.danger {
+				@apply border-danger-500 text-danger-500 hover:bg-danger-300;
+			}
+		}
+
+		&.text {
+			@apply border-none px-4;
+
+			&.primary,
+			&.secondary,
+			&.additional,
+			&.danger {
+				@apply bg-transparent;
+			}
+
+			&.primary {
+				@apply text-primary-500 hover:bg-primary-400;
+			}
+
+			&.secondary {
+				@apply text-secondary-500 hover:bg-secondary-400;
+			}
+
+			&.additional {
+				@apply text-additional-700 hover:bg-additional-400;
+			}
+
+			&.danger {
+				@apply text-danger-500 hover:bg-error-400;
+			}
+		}
+
+		&.chip {
+			@apply rounded-full font-medium;
+			padding: 0.8125rem 1.375rem;
+			font-size: 1rem;
+			line-height: 1em;
+		}
+
+		&.thin {
+			@apply max-h-8 text-xs;
+			min-height: auto;
+		}
+	}
+
+	.card {
+		@apply bg-surface border border-solid rounded overflow-hidden;
+		border-color: #e5e5e4;
+		box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.1);
+	}
+
+	.paper {
+		@apply bg-surface;
+		box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.06), 0px 1px 1px rgba(0, 0, 0, 0.25),
+			0px 1px 6px rgba(0, 0, 0, 0.1);
+	}
+}
+
